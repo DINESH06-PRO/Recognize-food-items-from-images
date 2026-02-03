@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Food Calorie Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🍽️ AI Food Calorie Tracker</h1>
+            <p class="subtitle">Upload food images to identify and track calories</p>
+        </header>
+
+        <div class="main-content">
+            <div class="card upload-section">
+                <h2 style="color: #667eea; margin-bottom: 20px; font-size: 1.9rem; font-weight: 700;">📸 Upload Food Image</h2>
+                
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-icon">📁</div>
+                    <p style="font-size: 1.2rem; font-weight: 600; color: #667eea;">Drag & Drop your food image here</p>
+                    <p style="color: #999; margin: 10px 0; font-size: 1rem;">or</p>
+                    <button class="btn" onclick="document.getElementById('fileInput').click()">
+                        Choose File
+                    </button>
+                </div>
+
+                <input type="file" id="fileInput" accept="image/*" />
+                
+                <img id="preview" alt="Preview" />
+                
+                <div style="margin-top: 20px;">
+                    <button class="btn" id="analyzeBtn" disabled>🔍 Analyze Food</button>
+                    <button class="btn" id="cameraBtn">📷 Use Camera</button>
+                </div>
+
+                <div class="error-message" id="errorMessage"></div>
+                
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Analyzing your food image...</p>
+                </div>
+            </div>
+
+            <div class="card results-section">
+                <h2>📊 Analysis Results</h2>
+                <div id="results">
+                    <p style="text-align: center; color: #999; padding: 40px;">
+                        Upload an image to see nutrition information
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="history-section">
+            <div class="history-card">
+                <h2 style="color: #667eea; margin-bottom: 20px; font-size: 1.9rem; font-weight: 700; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">📝 Today's Food Log</h2>
+                <div id="history"></div>
+                <div class="total-calories">
+                    <h3>Total Calories Today</h3>
+                    <div class="value" id="totalCalories">0 kcal</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
